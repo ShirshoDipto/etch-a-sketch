@@ -22,14 +22,6 @@ function getUserInput() {
 
 function removeExistingDom() {
 
-}
-
-
-function makeGrid(e) {
-    numClicks++;
-
-    // remove existing DOM.
-    const numGrid = getUserInput();
     if (numClicks > 1) {
         const sketchpad = document.querySelector('.sketch-pad');
         for (let i = 0; i < numItems; i++) {
@@ -37,6 +29,31 @@ function makeGrid(e) {
             sketchpad.removeChild(parentDiv);
         }
     }
+}
+
+
+function drawSketch(e) {
+    e.target.classList.add('draw');
+}
+
+
+function activateHover() {
+
+    const buttons = document.querySelectorAll('.childDiv');
+    console.log(buttons);
+
+    buttons.forEach(button => {
+        button.addEventListener('mouseover', drawSketch);
+    });
+}
+
+
+function makeGrid(e) {
+    numClicks++;
+
+    // remove existing DOM.
+    removeExistingDom();
+    const numGrid = getUserInput();
     
     const widthHeight = 850 / numGrid;
     const widthHeightPx = widthHeight.toString() + 'px';
@@ -56,6 +73,7 @@ function makeGrid(e) {
             parentDiv.appendChild(div);
         }
     }
+    activateHover();
     numItems = numGrid;
 }
 
@@ -64,6 +82,14 @@ function makeGrid(e) {
 
 
 
+
+
 const input = document.querySelector('.input');
 
 input.addEventListener('click', makeGrid);
+
+
+
+// select all buttons
+// add event listener
+// 
