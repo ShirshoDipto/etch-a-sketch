@@ -24,8 +24,29 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     flex: 1 1 auto;
+    border: 2px solid blue;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
 }
 
 .input {
     margin-top: 20px;
+}
+
+
+.parentDiv {
+    /* flex-shrink: 0; */
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.childDiv {
+    border: 2px solid black;
+    /* flex-shrink: 0; */
+    margin: 0px;
+    padding: 0px;
+    flex: 1;
+
 }
