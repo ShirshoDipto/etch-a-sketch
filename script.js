@@ -32,18 +32,26 @@ function removeExistingDom() {
 }
 
 
+function stopDraw(e) {
+    e.target.classList.remove('draw');
+}
+
+
+function drawAsMove(e) {
+    console.log(e);
+}
+
 function drawSketch(e) {
     e.target.classList.add('draw');
 }
 
-
 function activateHover() {
 
     const buttons = document.querySelectorAll('.childDiv');
-    console.log(buttons);
 
     buttons.forEach(button => {
         button.addEventListener('mouseover', drawSketch);
+        // button.addEventListener('mouseout', removeSketch)
     });
 }
 
@@ -55,20 +63,17 @@ function makeGrid(e) {
     removeExistingDom();
     const numGrid = getUserInput();
     
-    const widthHeight = 850 / numGrid;
+    const widthHeight = 400 / numGrid;
     const widthHeightPx = widthHeight.toString() + 'px';
     const sketchpad = document.querySelector('.sketch-pad');
-    console.log(sketchpad);
 
     for (let i = 0; i < numGrid; i++) {
         const parentDiv = document.createElement('div');
-        // parentDiv.setAttribute('style', `width: ${850}; height: ${widthHeightPx};`);
         parentDiv.classList.toggle('parentDiv');
         sketchpad.appendChild(parentDiv);
 
         for (let j = 0; j < numGrid; j++) {
             const div = document.createElement('div');
-            div.setAttribute('style', `width: ${widthHeightPx}; height: ${widthHeightPx};`);
             div.classList.toggle('childDiv');
             parentDiv.appendChild(div);
         }
@@ -89,7 +94,3 @@ const input = document.querySelector('.input');
 input.addEventListener('click', makeGrid);
 
 
-
-// select all buttons
-// add event listener
-// 

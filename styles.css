@@ -4,10 +4,27 @@ body {
     font-family: Roboto, sans-serif;
     display: flex;
     flex-direction: column;
+    background-color: rgb(65, 62, 62);
 }
 
 .header, .footer, .content, .sketch-pad, .input {
-    border: 2px solid red;
+    /* border: 2px solid red; */
+}
+
+.header {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.footer {
+    text-align: center;
+    height: 60px;
 }
 
 .content {
@@ -19,15 +36,15 @@ body {
 }
 
 .sketch-pad {
-    /* height: 960px; */
-    width: 960px;
+    height: 480px;
+    width: 480px;
     margin-top: 20px;
     margin-bottom: 20px;
     flex: 1 1 auto;
-    border: 2px solid blue;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: center; */
+    /* border: 2px solid blue; */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .input {
@@ -36,19 +53,17 @@ body {
 
 
 .parentDiv {
-    /* flex-shrink: 0; */
     margin: 0px;
     padding: 0px;
     display: flex;
+    flex: 1;
 }
 
 .childDiv {
     border: thin inset rgb(138, 129, 129);
-    /* flex-shrink: 0; */
     margin: 0px;
     padding: 0px;
     flex: 1;
-
 }
 
 
